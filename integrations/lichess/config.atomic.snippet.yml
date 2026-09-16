@@ -1,0 +1,80 @@
+# A substantial portion of this should be reconfigured based on your architecture choices. 
+
+# Apply these values to a fresh copy of lichess-bot's current config.yml.default.
+# This is intentionally a snippet, not a full standalone config.yml.
+# Keep the token OUT of this file and use the LICHESS_BOT_TOKEN environment variable.
+# Many of these settings are preference/starting points.
+
+engine:
+  dir: "D:/atomic_chess"
+  name: "src/uci_engine.py"
+  interpreter: "C:/Users/[your user here maybe idk]/venvs/atomic_chess/Scripts/python.exe"
+  working_dir: "D:/atomic_chess"
+  protocol: "uci"
+  ponder: false
+
+  # lichess-bot converts these to command-line options, e.g. --checkpoint=...
+  engine_options:
+    checkpoint: "D:/atomic_chess/ckpts/phase4/rl_iter_001/best.pt"
+    action-map-path: "D:/atomic_chess/action_map.json"
+    device: "cuda"
+    simulations: 200
+    c-puct: 1.5
+    min-simulations: 20
+    max-simulations: 400
+    fixed-move-time-ms: 0
+    min-move-time-ms: 50
+    max-move-time-ms: 1200
+    move-overhead-ms: 150
+    reserve-ms: 1000
+    time-fraction: 0.025
+    increment-fraction: 0.50
+    simulation-safety: 0.80
+    initial-sims-per-second: 180
+
+# Change the existing challenge: section in config.yml to these conservative test settings.
+challenge:
+  concurrency: 1
+  games_reserved_for_humans: 0
+  sort_by: "best"
+  preference: "none"
+  accept_bot: true
+  only_bot: false
+  max_increment: 5
+  min_increment: 2
+  max_base: 600
+  min_base: 180
+  max_days: 14
+  min_days: 1
+  variants:
+    - atomic
+  time_controls:
+    - blitz
+    - rapid
+  modes:
+    - casual        
+  bullet_requires_increment: false
+  max_simultaneous_games_per_user: 1
+  greeting:
+    hello: "Good luck!"
+    goodbye: "Good game!"
+    hello_spectators: ""
+    goodbye_spectators: ""
+  pgn_directory: "game_records"
+  pgn_file_grouping: "game"
+
+# Initially leave matchmaking off
+matchmaking:
+  allow_matchmaking: false
+  allow_during_games: false
+  challenge_variant: "atomic"
+  challenge_timeout: 30
+  challenge_initial_time:
+    - 180
+  challenge_increment:
+    - 2
+  opponent_rating_difference: 300
+  rating_preference: "none"
+  challenge_mode: "casual"
+  challenge_filter: none
+  include_challenge_block_list: false

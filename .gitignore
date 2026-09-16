@@ -1,0 +1,40 @@
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore virtual environments
+.venv/
+
+# Ignore IDE/editor settings
+.vscode/
+.idea/
+
+# Ignore large datasets and compressed files
+raw_lichess_data/
+data/
+*.csv
+*.parquet
+*.feather
+*.zst
+*.pgn
+*.zip
+*.gz
+*.tar
+*.tar.gz
+*.duckdb
+
+# Ignore OS junk files
+.DS_Store
+Thumbs.db
+
+# Ignore my archives doler
+archived_scripts/
+logs/
+
+ckpts/
+evaluation/
+myvenv/
+scratch/
+selfplay/

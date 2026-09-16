@@ -1,0 +1,25 @@
+# Core utilities
+requests
+zstandard
+pandas
+python-chess
+duckdb
+chess
+numpy
+pyarrow # apache arrow is more efficient for loads of data than numpy
+fastparquet
+parquet
+
+torch --index-url https://download.pytorch.org/whl/cu118 # might be the wrong link. I had to install a new thing to use CUDA. IDK. 
+torchvision --index-url https://download.pytorch.org/whl/cu118
+torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+scikit-learn
+statsmodels
+matplotlib
+seaborn
+
+# Optional but useful
+docopt
+tqdm
+ipykernel
