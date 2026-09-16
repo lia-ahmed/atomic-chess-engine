@@ -8,7 +8,13 @@ The engine has been tested both locally and in live Atomic play on Lichess.
 
 This project was heavily inspired by Google's AlphaZero, and its processes. 
 
+This repository is a cleaned-up public version of an ongoing research/engineering project. Development experiments and intermediate iterations are not all represented in the public history.
+
 ---
+## Intro
+
+Atomic Chess Engine is a neural Monte Carlo Tree Search engine for Atomic Chess, combining supervised learning from historical games with AlphaZero-style self-play reinforcement learning. It uses a PyTorch policy/value network, PUCT search, and an iterative self-play training pipeline, and can be run as a UCI engine or deployed as a Lichess bot.
+
 
 ## Features
 
